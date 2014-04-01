@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="box">
+
+<head>
+  <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script data-require="angular.js@1.2.15" data-semver="1.2.15" src="http://code.angularjs.org/1.2.15/angular.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link data-require="bootstrap-css@*" data-semver="3.1.1" rel="stylesheet" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js"></script>
+</head>
+
+<body ng-controller="boxCtrl">
+
+  <ul class="nav nav-tabs border-box">
+    <li class=""><a href ng-click="draw(1)">==</a></li>
+    <li class=""><a href  ng-click="draw(2)">===</a></li>
+    <li class=""><a href  ng-click="draw(3)">if ( )</a></li>
+  </ul>
+
+  <table ng-show="operator==1" class="table table-curved ng-hide">
+    <tr>
+    </tr>
+    <tr>
+      <td/>
+      <td ng-repeat="de in descr">{{de}}</td>
+    </tr>
+    <tr ng-repeat="row in items1">
+      <td/>{{descr[$index]}}
+      <td ng-repeat="col in items2" ng-attr-class="{{col==row && 'green-square' || 'red-square' }}">{{col == row}}</td>
+    </tr>
+  </table>
+
+  <table ng-show="operator==2" class="table table-curved ng-hide">
+    <tr>
+      <td/>
+      <td ng-repeat="de in descr">{{de}}</td>
+    </tr>
+    <tr ng-repeat="row in items1">
+      <td/>{{descr[$index]}}
+      <td ng-repeat="col in items2" ng-attr-class="{{col===row && 'green-square' || 'red-square' }}">{{col === row}}</td>
+    </tr>
+  </table>
+
+  <table ng-show="operator==3" class="table table-curved ng-hide">
+    <tr>
+      <td ng-repeat="de in descr">{{'if('+de+')'}}</td>
+    </tr>
+    <tr>
+      <td ng-repeat="row in items1" ng-attr-class="{{row && 'green-square' || 'red-square' }}">{{row}}</td>
+    </tr>
+  </table>
+</body>
+
+</html>
