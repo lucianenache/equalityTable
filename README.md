@@ -1,0 +1,4 @@
+equalityTable
+=============
+
+AngularJS equality table
