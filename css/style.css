@@ -1,18 +1,21 @@
 .green-square{
   background-color:#4A8A46;
-  text-align:center;
   color:#d1d1d1;
 }
 
 
 .red-square{
   background-color:#5c5c5c;
-  text-align:center;
   color:#d1d1d1;
 }
 
+
+
 .ng-hide {
+  /* Not to worry, this will override the AngularJS default...
   display:block!important;
+ 
+  /* this is just another form of hiding an element */
   position:absolute;
   top:-9999px;
   left:-9999px;
@@ -20,6 +23,12 @@
 
 .border-box{
    border: 1px solid #ccc; 
+}
+
+.table{
+  border-collapse: collapse;
+  text-align:center;
+  font-size:12px;
 }
 
 .table-curved {
@@ -33,10 +42,10 @@
 }
 .table-curved td, .table-curved th {
     border: 1px solid #ccc;
-    //border-top: 1px solid #ccc;
     border-radius: 3px 3px 3px 3px;
    
 }
+
 .table-curved th {
     border-top: none;
 }
